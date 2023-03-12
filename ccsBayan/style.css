@@ -1,0 +1,62 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.accordeon {
+  max-width: 40rem;
+  background: #c953e0;
+  margin: 0 auto;
+}
+
+.accordeon label {
+  cursor: pointer;
+}
+
+.section__header:hover {
+  background-color: #b93fd1;
+}
+
+.accordeon label input {
+  display: none;
+}
+
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.section__header img {
+  transition: 0.4s;
+}
+
+.section__content {
+  max-height: 0;
+  overflow: hidden;
+  background: #db94e9;
+  text-align: center;
+}
+
+.section__content img {
+  display: block;
+  margin: auto;
+  width: 30%;
+  transition: 0.3s;
+}
+
+.accordeon label input:checked ~ .section__content {
+  max-height: 100vh;
+}
+.accordeon label input:checked ~ .section__header img {
+  transform: rotate(-0.25turn);
+}
+.accordeon label input:checked ~ .section__content img {
+  width: 40%;
+}
