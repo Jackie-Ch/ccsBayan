@@ -34,6 +34,7 @@ body {
 }
 
 .section__header img {
+  display: none;
   transition: 0.4s;
 }
 
@@ -43,14 +44,23 @@ body {
   background: #db94e9;
   text-align: center;
 }
+.section__content p {
+  font-size: 2rem;
+}
 
 .section__content img {
   display: block;
   margin: auto;
-  width: 30%;
+  width: 70%;
   transition: 0.3s;
 }
 
+.accordeon label input:checked ~ .section__header {
+  color: chartreuse;
+}
+.accordeon:hover .section__header img {
+  display: block;
+}
 .accordeon label input:checked ~ .section__content {
   max-height: 100vh;
 }
@@ -58,5 +68,12 @@ body {
   transform: rotate(-0.25turn);
 }
 .accordeon label input:checked ~ .section__content img {
-  width: 40%;
+  width: 80%;
+}
+label:hover .section__content {
+  transition: 0.9s;
+  max-height: 100vh;
+}
+label:hover .section__header img {
+  transform: rotate(-0.25turn);
 }
